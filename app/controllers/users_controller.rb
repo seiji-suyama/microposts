@@ -19,6 +19,17 @@ class UsersController < ApplicationController
     end
   end
 
+  #UsersControllerのfollowingsにフォローしているユーザーを
+  #followersにフォローされているユーザーを表示するメソッドを実装してください。
+  def followings
+    #users/:id/followings
+    @user = User.find(params[:id])
+    @users = @user.following_users
+  end
+  
+  def followers
+  end
+
   private
 
   def user_params
