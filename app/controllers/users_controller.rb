@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   def auth_user
     if current_user != @user
       redirect_to root_url
+      flash[:danger] = "不正なアクセス"
     end
   end
 end
