@@ -11,12 +11,20 @@
   </aside>
   <div class="col-md-8">
     <h3>Followings</h3>
+    <section class="user_info">
     <% @users.each do |user| %>
-      <%= user.name %><br>
-      <%= user.email %><br>
-      <%= user.profile %><br>
-      <%= user.area %>
-  <% end %>  
+      <h4>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h4>
+        email:
+        <%= user.email %><br>
+        profile:
+        <%= user.profile %><br>
+        area:
+        <%= user.area %><br>
+    <% end %> 
+    </section>
   </div>
 </div>
 
