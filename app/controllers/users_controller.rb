@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
+  
   #UsersControllerのfollowingsにフォローしているユーザーを
   #followersにフォローされているユーザーを表示するメソッドを実装してください。
   def followings
@@ -34,6 +34,11 @@ class UsersController < ApplicationController
     @users = @user.follower_users
   end
   
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.favorite_microposts
+  end
+
   def edit
   end
   
